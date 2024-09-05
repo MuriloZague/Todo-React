@@ -27,9 +27,12 @@ function App() {
 };
 
   const removeTodo = (id) => {
-    const newTodos = [...todos]
+    if (confirm('Deseja excluir essa tarefa?')) {
+      const newTodos = [...todos]
     const filteredTodos = newTodos.filter(todo => todo.id !== id ? todo : null);
     setTodos(filteredTodos);
+    }
+    
   }
 
   const completeTodo = (id) => {
@@ -65,7 +68,7 @@ function App() {
         ))}
       </div>
       }
-      
+
     </div>
   )
 }
